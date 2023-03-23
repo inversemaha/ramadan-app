@@ -31,7 +31,6 @@ Route::get('/', [Controller::class, 'home']);
 Route::any('/applicant/submit', [Controller::class, 'applicantSubmit']);
 
 
-
 Route::get('/selfie-contest', [Controller::class, 'selfieContest']);
 Route::any('/selfie-contest/submit', [Controller::class, 'selfieContestSubmit']);
 
@@ -102,7 +101,6 @@ Route::group(['prefix' => "admin", 'middleware' => ['admin']], function () {
     Route::get('/winner/status-update/{id}/{status}', [ApplicantsController::class, 'winnerStatusUpdate']);
 
 
-
     Route::get('/drawing', [AdminController::class, 'drawing']);
     Route::get('/drawing/status-update/{id}/{status}', [AdminController::class, 'drawingStatus']);
 
@@ -139,9 +137,6 @@ Route::group(['prefix' => "admin", 'middleware' => ['admin']], function () {
     Route::post('/profile/update', [AdminController::class, 'profileUpdate']);
 
 
-
-
-
     Route::get('/manage-photo', [SelfieSubmissionController::class, 'managePhoto']);
     Route::post('/manage-photo/store', [SelfieSubmissionController::class, 'managePhotoStore']);
     Route::any('/manage-photo/edit/{id}', [SelfieSubmissionController::class, 'managePhotoUpdate']);
@@ -157,14 +152,11 @@ Route::group(['prefix' => "admin", 'middleware' => ['admin']], function () {
     Route::get('/selfie/status-update/{id}/{status}', [SelfieSubmissionController::class, 'statusUpdate']);
 
 
-
     Route::get('/status/delete/{id}', [ApplicantsController::class, 'destroy']);
     Route::get('/status/active/{id}', [ApplicantsController::class, 'active']);
     Route::get('/status/inactive/{id}', [ApplicantsController::class, 'inactive']);
     Route::get('/status/edit/{id}', [ApplicantsController::class, 'edit']);
     Route::post('/status/update', [ApplicantsController::class, 'update']);
-
-
 
 
     Route::get('/logout', [AdminController::class, 'logout']);
@@ -193,7 +185,7 @@ Route::get('/getData', [Controller::class, 'getData']);
 Route::get('/districts/{id}', [Controller::class, 'getUpzila']);
 
 //Clear Cache facade value:
-Route::get('/clear', function() {
+Route::get('/clear', function () {
 
     Artisan::call('cache:clear');
     Artisan::call('config:clear');
