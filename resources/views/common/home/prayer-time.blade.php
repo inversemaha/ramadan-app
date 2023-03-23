@@ -1,49 +1,56 @@
 <style>
     .fajr {
-        width: 25px;
-        height: 25px;
+        width: 15px;
+        height: 15px;
         margin: 0px 11px 0px -8px;
         background-size: cover;
     }
+
     .dhuhr {
-        width: 25px;
-        height: 25px;
+        width: 15px;
+        height: 15px;
         margin: 0px 11px 0px -10px;
         background-size: cover;
     }
+
     .asar {
-        width: 21px;
-        height: 21px;
+        width: 15px;
+        height: 15px;
         margin: 0px 11px 0px -6px;
         background-size: cover;
     }
+
     .magrib {
-        width: 25px;
-        height: 25px;
+        width: 15px;
+        height: 15px;
         margin: 0px 11px 0px -9px;
         background-size: cover;
     }
+
     .isha {
-        width: 23px;
-        height: 23px;
+        width: 15px;
+        height: 15px;
         margin: 0px 11px 0px -9px;
         background-size: cover;
     }
+
     .jummah {
-        width: 25px;
-        height: 25px;
+        width: 15px;
+        height: 15px;
         margin: 0px 11px 0px 0px;
         background-size: cover;
     }
+
     .salat {
-        width: 60px;
-        height: 80px;
+        width: 25px;
+        height: 30px;
         margin: 0px 11px 0px 0px;
         background-size: cover;
     }
+
     .azan {
-        width: 60px;
-        height: 80px;
+        width: 25px;
+        height: 30px;
         margin: 0px 11px 0px 0px;
         background-size: cover;
     }
@@ -85,8 +92,16 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
+                            <h5 class="section-title">আজানের দোয়া</h5>
+                            <p>আল্লাহুম্মা রব্বা হাজিহিদ দাওয়াতিত তাম্মাতি ওয়াস সালাতিল কায়িমাতি আতি মুহাম্মাদানিল
+                                ওয়াসিলাতা ওয়াল ফাদিলাতা ওয়াদ দারজাতার রফিআতা ওয়াবআসহু মাকামাম মাহমুদানিল্লাজি
+                                ওয়াআত্তাহু; ওয়ারজুকনা শাফাআতাহু ইয়াওমাল কিয়ামাতি, ইন্নাকা লা তুখলিফুল মিআদ।</p>
 
-                            <p>এই সময়সূচি ঢাকা অঞ্চলের জন্য প্রযোজ্য</p>
+                            <p><b>এই দোয়ার অর্থ:</b> হে আল্লাহ! এই পরিপূর্ণ আহ্বানের ও স্থায়ী প্রতিষ্ঠিত নামাজের আপনিই প্রভু।
+                                হজরত মুহাম্মদ (সা.)-কে ওয়াসিলা ও সুমহান মর্যাদা দান করুন এবং তাঁকে ওই প্রশংসিত স্থানে
+                                অধিষ্ঠিত করুন, যার প্রতিশ্রুতি আপনি তাঁকে দিয়েছেন আর কিয়ামতের দিন তাঁর সুপারিশ আমাদের
+                                নসিব করুন; নিশ্চয়ই আপনি প্রতিশ্রুতির ব্যতিক্রম করেন না। আজানের পর দরুদ শরিফ পড়ে এ দোয়া
+                                পড়া সুন্নত।</p>
                         </div>
                         <div class="col-md-6">
 
@@ -105,7 +120,7 @@
                                 </tr>
                                 <tr>
                                     <td><img class="dhuhr" src="/icons/22.png"/>জোহর</td>
-                                   {{-- <td>{{$data_array['fajr']}}</td>--}}
+                                    {{-- <td>{{$data_array['fajr']}}</td>--}}
                                     <td><span ng-bind="dhuhr"></span></td>
                                 </tr>
                                 <tr>
@@ -120,7 +135,7 @@
                                 </tr>
                                 <tr>
                                     <td><img img class="isha" src="/icons/77.png"/>এশা</td>
-                                   {{-- <td>{{$data_array['fajr']}}</td>--}}
+                                    {{-- <td>{{$data_array['fajr']}}</td>--}}
                                     <td><span ng-bind="isha"></span></td>
                                 </tr>
                                 {{-- <tr>
@@ -181,7 +196,6 @@
                 $scope.asr = response.data['asr'];
                 $scope.maghrib = response.data['maghrib'];
                 $scope.isha = response.data['isha'];
-
 
 
             }, function errorCallback(response) {

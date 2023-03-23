@@ -10,170 +10,288 @@
             <div class="row">
                 <div class="col-md-6">
                     <div id="iftar">
-                        <h5 class="section-title">ইফতারের সময় বাকি </h5>
-                        <p>এই সময়সূচি ঢাকা অঞ্চলের জন্য প্রযোজ্য
-                            ( @if(\Illuminate\Support\Carbon::now()->format('F') == "April")
-                                এপ্রিল @else মে @endif <span class="bangla-font"
-                                                             id="ifter_date">-</span>) </p>
+                        <h6 class="section-title">নফল নামাজের পরিচয় ও প্রকারভেদ</h6>
+                        <p>দৈনিক পাঁচ ওয়াক্তে সতেরো রাকাত ফরজ নামাজ, তিন রাকাত ওয়াজিব বিতির নামাজ, চার ওয়াক্তে বারো
+                            রাকাত সুন্নতে মুআক্কাদা নামাজ, দুই ওয়াক্তে আট রাকাত সুন্নতে জায়েদা নামাজ ছাড়া অন্যান্য নামাজ
+                            হলো নফল নামাজ। নফল নামাজের মধ্যে পাঁচ ওয়াক্ত হলো নির্ধারিত নফল নামাজ; যথা: তাহাজ্জুদ নামাজ,
+                            ইশরাক নামাজ, চাশত নামাজ, জাওয়াল নামাজ, আউওয়াবিন নামাজ। এ ছাড়া রয়েছে আরও কিছু অনির্ধারিত নফল
+                            নামাজ। ফরজ ও ওয়াজিব নামাজ ছাড়া বাকি সব নামাজকেই নফল নামাজ বলা হয়। (কিতাবুস সালাত)।</p>
 
-                        <ul class="list-inline">
 
-                            <li class="list-inline-item">
-                                <div class="hour">
-                                    <h4>ঘন্টা<br> <span id="hour">-</span></h4>
-                                </div>
-                            </li>
-                            <li class="list-inline-item">
-                                <div class="min">
-                                    <h4> মিনিট <br> <span id="min">-</span></h4>
-                                </div>
-                            </li>
-                            <li class="list-inline-item">
-                                <div class="sec">
-                                    <h4> সেকেন্ড <br> <span id="sec">-</span></h4>
-                                </div>
-                            </li>
-
-                        </ul>
                     </div>
                     <div>
-                        <h5 class="section-title">সেহরির শেষ সময়</h5>
-                        <p>এই সময়সূচি ঢাকা অঞ্চলের জন্য প্রযোজ্য
-                            (@if(\Illuminate\Support\Carbon::now()->format('F') == "April")
-                                এপ্রিল @else মে @endif <span class="bangla-font"
-                                                             id="seheri_date">-</span>) </p>
-
-                        <center>
-                            <div id="seheri">
-                                <h3 class="bangla-font"><span id="seheri_time">-</span></h3>
-                            </div>
-                        </center>
+                        <h6 class="section-title">নফল নামাজের নিষিদ্ধ সময়</h6>
+                        <p>সূর্যোদয়ের সময় সব নামাজ নিষিদ্ধ, সূর্য মাথার ওপর স্থির থাকা অবস্থায় নামাজ পড়া মাকরুহে
+                            তাহরিমি, সূর্যাস্তের সময় চলমান আসর ব্যতীত অন্য কোনো নামাজ বৈধ নয়। এ ছাড়া ফজর নামাজের ওয়াক্ত
+                            হলে তখন থেকে সূর্যোদয় পর্যন্ত এবং আসর ওয়াক্তে ফরজ নামাজ পড়া হলে তখন থেকে সূর্যাস্ত পর্যন্ত
+                            কোনো ধরনের নফল নামাজ পড়া নিষেধ। এই পাঁচটি সময় বাদে অন্য যেকোনো সময় নফল নামাজ পড়া যায়।
+                            (আওকাতুস সালাত)।</p>
 
 
                     </div>
 
                 </div>
                 <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h5 class="section-title">আপনার জেলা নির্বাচন করে সেহেরি ও ইফতারের সময় দেখুন</h5>
-                            <select class="form-control" name="minute" onchange="addMinute(value)">
-                                <option value="">আপনার জেলা নির্বাচন করুন</option>
-                                <option value="8">ঠাকুরগাঁও, নবাবগঞ্জ</option>
-                                <option value="7">দিনাজপুর , পঞ্চগড়</option>
-                                <option value="6">রাজশাহী,মেহেরপুর,জয়পুরহাট,সাতক্ষীরা</option>
-                                <option value="5">নাটোর,নীলফামারী</option>
-                                <option value="4">লালমনিরহাট,বগুড়া,যশোর,কুষ্টিয়া, ঝিনাইদহ,পাবনা,রংপুর</option>
-                                <option value="3">খুলনা,গাইবান্ধা,সিরাজগঞ্জ</option>
-                                <option value="2">ফরিদপুর,বাগেরহাট,জামালপুর</option>
-                                <option value="1">মাদারীপুর,বরিশাল,ঝালকাটি,পটুয়াখালী</option>
-                                <option value="-6">বান্দরবান,রাঙামাটি</option>
-                                <option value="-5">সিলেট,চট্টগ্রাম</option>
-                                <option value="-4">সুনামগঞ্জ ,হবিগঞ্জ,ফেনী</option>
-                                <option value="-3">কুমিল্লা ,ব্রাম্মণবাড়িয়া ,নোয়াখালী</option>
-                                <option value="-2">ময়মনসিংহ ,কিশোরগঞ্জ</option>
-                                <option value="-1">নরসিংদী ,মুন্সীগঞ্জ,চাঁদপুর,টাঙ্গাইল</option>
-
-                            </select>
-
-                        </div>
-                        <div class="col-md-12 zila-time" id="zila">
-                            <h5 class="section-title">ইফতারের সময়</h5>
-                            <center>
-                                <ul class="list-inline">
-
-                                    <li class="list-inline-item">
-                                        <div class="hour">
-                                            <h4>ঘন্টা<br> <span id="zhour">-</span></h4>
-                                        </div>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <div class="min">
-                                            <h4> মিনিট <br> <span id="zmin">-</span></h4>
-                                        </div>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <div class="sec">
-                                            <h4> সেকেন্ড <br> <span id="zsec">-</span></h4>
-                                        </div>
-                                    </li>
-
-                                </ul>
-
-                                <div id="zila_seheri">
-                                    <h5 class="section-title">সেহরির শেষ সময়</h5>
-                                    <center>
-                                        <div id="seheri">
-                                            <h3 class="bangla-font"><span id="zila_seheri_time">-</span></h3>
-                                        </div>
-                                    </center>
+                    <div id="iftar">
+                        <h6 class="section-title">নফল নামাজের নিয়ত</h6>
+                        <p>নফল নামাজগুলো অধিকাংশই সুন্নত। তাই নিয়তে সুন্নত বলা যাবে, নফল বললেও হবে; সুন্নত–নফল কোনো কিছু
+                            না বলে শুধু তাকবিরে তাহরিমা দিয়ে আরম্ভ করলেও হয়ে যাবে। দুই রাকাতের বেশি নফল নামাজের নিয়ত করে
+                            তা ছেড়ে দিলে বা যেকোনো জোড় সংখ্যা পূর্ণ হওয়ার পর বিজোড় সংখ্যায় নফল নামাজ ভেঙে গেলে; পরে এ
+                            জন্য শুধু দুই রাকাত আদায় করা ওয়াজিব হবে। (হিদায়া)</p>
 
 
-                                </div>
-                            </center>
+                    </div>
+                    <div>
+                        <h6 class="section-title">নফল নামাজের সুরা কিরাআত</h6>
+                        <p>নফল নামাজ যেকোনো সূরা বা আয়াত দিয়ে পড়া যায়। নফল নামাজে সূরার তারতিব বা ধারাক্রম জরুরি নয়। নফল
+                            নামাজের সূরা কিরাআত নীরবে পড়তে হয়; তবে রাতের নফল নামাজ ইচ্ছা করলে সরবেও পড়া যায়। বিভিন্ন
+                            কিতাবে বিভিন্ন নফল নামাজের বিভিন্ন সূরা কিরাআত ও বিশেষ বিশেষ নিয়ম বর্ণিত আছে। সম্ভব হলে তা
+                            অনুসরণ করা উত্তম; তবে জরুরি নয়। নফল নামাজে যত ইচ্ছা তত দীর্ঘ কিরাআত পাঠ করা যায়। এতে রাকাত
+                            দীর্ঘ করার জন্য এবং তিলাওয়াতের পরিমাণ বৃদ্ধির জন্য একই রাকাতে বিভিন্ন সূরা ও বিভিন্ন আয়াত
+                            পড়া যায় এবং একই রাকাতে একই সূরা বারবার পড়া যায়। নফল নামাজে কিরাআতে তিলাওয়াতের তারতিব বা
+                            ধারাবাহিকতা বজায় রাখা জরুরি নয়। নফল নামাজে রুকু, সিজদাসহ প্রতিটি রুকন বা পর্ব দীর্ঘায়িত করা
+                            সুন্নত ও মোস্তাহাব। এ জন্য রুকু ও সিজদায় তাসবিহ অনেকবার পড়া যায় এবং অন্যান্য পর্বে বেশি
+                            পরিমাণে বিভিন্ন দোয়া (যা কোরআন-হাদিসে আছে) পাঠ করা যায়। (কানজ)</p>
 
-
-                        </div>
 
                     </div>
 
-
                 </div>
-                {{--<div class="col-md-6 col-12">
-                    <center>
-                        <img src="/images/ifter_time.jpg"  alt="banner">
-
-                    </center>
-                </div>
-                <div class="col-md-6 col-12">
-                    <img src="/images/ifter_time.jpg"  alt="banner">
-
-                </div>--}}
             </div>
 
 
         </div>
     </section>
-    <section class="" id="roja">
+    <section class="" id="ad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
 
-                    <h5 class="section-title">যে সকল দিনে রোযা রাখা নিষিদ্ধ</h5>
-                </div>
-                <div class="col-md-4 nishiddo">
-                    <div class="elementor-widget-container">
-                        <div class="single-intro-text mb-5">
-                            <i class="icon dripicons-time-reverse"></i>
-                            <h3 class="ts-title">ঈদুল ফিতর (রামাযানের ঈদ) এর দিন।</h3>
-                            <span class="count-number"></span>
-                        </div><!-- single intro text end-->
-
+                            <div class="col-md-6">
+                                <h4 class="section-title">নফল নামাজের নিয়ত</h4>
+                                <p class="card-text">নফল নামাজগুলো অধিকাংশই সুন্নত। তাই নিয়তে সুন্নত বলা যাবে, নফল বললেও
+                                    হবে; সুন্নত–নফল কোনো কিছু না বলে শুধু তাকবিরে তাহরিমা দিয়ে আরম্ভ করলেও হয়ে যাবে। দুই
+                                    রাকাতের বেশি নফল নামাজের নিয়ত করে তা ছেড়ে দিলে বা যেকোনো জোড় সংখ্যা পূর্ণ হওয়ার পর
+                                    বিজোড় সংখ্যায় নফল নামাজ ভেঙে গেলে; পরে এ জন্য শুধু দুই রাকাত আদায় করা ওয়াজিব হবে।
+                                    (হিদায়া)</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="section-title">নফল নামাজের সুরা কিরাআত</h4>
+                                <p class="card-text">নফল নামাজ যেকোনো সূরা বা আয়াত দিয়ে পড়া যায়। নফল নামাজে সূরার তারতিব
+                                    বা ধারাক্রম জরুরি নয়। নফল নামাজের সূরা কিরাআত নীরবে পড়তে হয়; তবে রাতের নফল নামাজ
+                                    ইচ্ছা করলে সরবেও পড়া যায়। বিভিন্ন কিতাবে বিভিন্ন নফল নামাজের বিভিন্ন সূরা কিরাআত ও
+                                    বিশেষ বিশেষ নিয়ম বর্ণিত আছে। সম্ভব হলে তা অনুসরণ করা উত্তম; তবে জরুরি নয়। নফল নামাজে
+                                    যত ইচ্ছা তত দীর্ঘ কিরাআত পাঠ করা যায়। এতে রাকাত দীর্ঘ করার জন্য এবং তিলাওয়াতের
+                                    পরিমাণ বৃদ্ধির জন্য একই রাকাতে বিভিন্ন সূরা ও বিভিন্ন আয়াত পড়া যায় এবং একই রাকাতে
+                                    একই সূরা বারবার পড়া যায়। নফল নামাজে কিরাআতে তিলাওয়াতের তারতিব বা ধারাবাহিকতা বজায়
+                                    রাখা জরুরি নয়। নফল নামাজে রুকু, সিজদাসহ প্রতিটি রুকন বা পর্ব দীর্ঘায়িত করা সুন্নত ও
+                                    মোস্তাহাব। এ জন্য রুকু ও সিজদায় তাসবিহ অনেকবার পড়া যায় এবং অন্যান্য পর্বে বেশি
+                                    পরিমাণে বিভিন্ন দোয়া (যা কোরআন-হাদিসে আছে) পাঠ করা যায়। (কানজ)</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 nishiddo">
-                    <div class="elementor-widget-container">
-                        <div class="single-intro-text mb-5">
-                            <i class="icon dripicons-time-reverse"></i>
-                            <h3 class="ts-title">ঈদুল আযহা (কুরবানী) এর দিন। </h3>
-                            <span class="count-number"></span>
-                        </div><!-- single intro text end-->
+            </div>
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
 
-                    </div>
-                </div>
-                <div class="col-md-4 nishiddo">
-                    <div class="elementor-widget-container">
-                        <div class="single-intro-text mb-5">
-                            <i class="icon dripicons-time-reverse"></i>
-                            <h3 class="ts-title"> ঈদুল আযহার এর পরে আরো তিন দিন।</h3>
-                            <span class="count-number"></span>
-                        </div><!-- single intro text end-->
-
+                            <div class="col-md-6">
+                                <h4 class="section-title">তাহিয়্যাতুল অজুর নামাজ</h4>
+                                <p class="card-text">অজু করার পরপরই এই নামাজ দুই রাকাত পড়তে হয়। ওয়াক্ত মাকরুহ হলে,
+                                    মাকরুহ ওয়াক্ত শেষ হওয়া পর্যন্ত অপেক্ষা করতে হবে। নবী করিম (সা.) ঘোষণা করেছেন, ‘যে
+                                    ব্যক্তি অজু করে দুই রাকাত নামাজ ইখলাসের সঙ্গে পড়বে, তার বেহেশত লাভ হওয়া অবধারিত।’
+                                    (মুসলিম ও আবু দাউদ)। রাসুলুল্লাহ (সা.) বলেছেন, আল্লাহ তাআলা বলেন, যে ব্যক্তি অজু
+                                    ভাঙার পর অজু করল না, সে আমাকে অবজ্ঞা করল; আর যে ব্যক্তি অজু করার পর দুই রাকাত (নফল)
+                                    নামাজ পড়ল না, সেও আমাকে অবহেলা করল। (হাদিসে কুদসি)।</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="section-title">দুখুলিল মাসজিদের নামাজ</h4>
+                                <p class="card-text">মসজিদে প্রবেশের সঙ্গে সঙ্গে, বসার আগেই দুই রাকাত দুখুলিল মাসজিদ
+                                    নামাজ পড়তে হয়। নবী করিম (সা.) বলেছেন, ‘তোমাদের কেউ যখন মসজিদে প্রবেশ করবে, তখন বসার
+                                    আগেই তার দুই রাকাত নামাজ পড়া উচিত।’ (হাদিস)। তবে যদি মাকরুহ ওয়াক্ত হয়, তাহলে মাকরুহ
+                                    ওয়াক্ত শেষ হলে পড়বে। এ জন্য বসে অপেক্ষা করতে পারবে। (ফাতাওয়ায়ে আলমগিরি)।</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <section class="" id="ad">
+        <div class="container">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <h4 class="section-title">সালাতুস সফর এবং দুখুলিল মানজিল ও খুরুজুল মানজিলের নামাজ</h4>
+                                <p class="card-text">বাড়ি থেকে সফরে বের হওয়ার আগে চার রাকাত নফল নামাজ পড়া অতীব বরকতময়।
+                                    এই নামাজকে সালাতুস সফর বা সফরের নামাজ বলা হয়। সফর থেকে বাড়ি ফিরলে বা সফরে গন্তব্যে
+                                    পৌঁছালে অথবা সফরে কোথাও অবস্থান করলে দুই রাকাত নফল নামাজ আদায় করবে। এই নামাজকে
+                                    সালাতু দুখুলিল মানজিল বা মঞ্জিলে প্রবেশের নামাজ বলে। একইভাবে বাড়ি থেকে সফরে বের
+                                    হওয়ার সময় কিংবা সফর থেকে বাড়িতে যাওয়ার সময় বা সফরের মাঝে অবস্থান থেকে রওনা দেওয়ার
+                                    সময় দুই রাকাত নফল নামাজ পড়তে হয়। এই নামাজকে সালাতুল খুরুজিল মানজিল বা মঞ্জিল থেকে
+                                    প্রত্যাবর্তনের নামাজ বলে। (তান্বিহুল গাফিলিন)।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <h4 class="section-title">সালাতুল হাজাত</h4>
+                                <p class="card-text">সালাতুল হাজাত প্রসঙ্গটি বুখারি, আবু দাউদ, তিরমিজি, নাসায়ি, ইবনে
+                                    মাজাহ, মুসনাদে আহমাদ, মিশকাতসহ বহু হাদিস গ্রন্থে রয়েছে। পাক-পবিত্র হয়ে দোয়া,
+                                    ইস্তিগফার ও কয়েকবার দরুদ শরিফ পড়ে একাগ্রতার সঙ্গে দুই রাকাত নফল নামাজ পড়তে হবে।
+                                    নামাজ শেষে ১১ বার ‘ইয়া কাজিয়াল হাজাত’ (হে প্রয়োজন পূর্ণকারী) পড়বে এবং আরও কয়েকবার
+                                    দরুদ শরিফ পড়ে ভক্তি ও মহব্বতের সঙ্গে উদ্দেশ্য পূর্ণ হওয়ার জন্য দোয়া ও মোনাজাত করতে
+                                    হবে। ইনশা আল্লাহ মনোবাঞ্ছা পূর্ণ হবে।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="" id="ad">
+        <div class="container">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <h4 class="section-title">সালাতু কাজায়িদ দাঈন বা ঋণ পরিশোধের নামাজ</h4>
+                                <p class="card-text">হজরত আবু উমর (রা.) থেকে বর্ণিত, জনৈক ব্যক্তি রাসুলুল্লাহ (সা.)-এর
+                                    দরবারে এসে বললেন, ইয়া রাসুলুল্লাহ! আমার ঋণ আছে; কিন্তু তা পরিশোধ করার ক্ষমতা নেই।
+                                    উত্তরে রাসুলুল্লাহ (সা.) বললেন, তুমি দুই রাকাত করে চার রাকাত নামাজ আদায় করো; ইনশা
+                                    আল্লাহ তোমার ঋণ পরিশোধ হয়ে যাবে।</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="section-title">সালাতুল ফাকা</h4>
+                                <p class="card-text">হজরত হুসাঈন (রা.) পুত্র আলী (রা.) কে বলেন, বত্স! শোনো, যখন তোমার
+                                    ওপর কোনো বালা-মুসিবত আপতিত হয় অথবা দুর্ভিক্ষ দেখা দেয়, তখন তুমি চার রাকাত নফল নামাজ
+                                    পড়বে। আলী ইবনে হুসাইন (রা.) বলেন, যে ব্যক্তি এই নামাজ পড়বে, আল্লাহ তাআলা তার বিপদ ও
+                                    অভাব দূর করবেন।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <h4 class="section-title">সালাতুস শোকর</h4>
+                                <p class="card-text">মনের কোনো আশা বা ইচ্ছা পূর্ণ হলে অথবা কোনো বিপদাপদ বা বালা-মুসিবত
+                                    দূর হলে এবং আল্লাহর তরফ থেকে কোনো নিয়ামতপ্রাপ্ত হলে দুই রাকাত শোকরানা নামাজ আদায়
+                                    করতে হয়। একে সালাতুস শোকর বা কৃতজ্ঞতার নামাজ বলে।</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="section-title">সালাতুত তাওবা</h4>
+                                <p class="card-text">সালাতুত তাওবা বিষয়টি আবু দাউদ, তিরমিজি, ইবনে মাজাহ, মুসনাদে আহমাদসহ
+                                    অনেক গ্রন্থেই রয়েছে। কোনো গোনাহ হয়ে গেলে; দুই রাকাত নফল নামাজ পড়ে, তাওবা ইস্তিগফার
+                                    করে, দরুদ শরিফ পড়ে কান্নাকাটিসহ আল্লাহর কাছে দোয়া ও মোনাজাত করলে আল্লাহ অবশ্যই ক্ষমা
+                                    করবেন। এই নামাজকে সালাতুত তাওবা বা তাওবার নামাজ বলা হয়।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="" id="ad">
+        <div class="container">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <h4 class="section-title">সালাতুল মাতার</h4>
+                                <p class="card-text">হজরত আবু উমামা (রা.) বর্ণনা করেন, রাসুলুল্লাহ (সা.) বলেছেন, আকাশে
+                                    মেঘ দেখে যদি কোনো ব্যক্তি দুই রাকাত নফল নামাজ পড়ে; আল্লাহ তাকে বৃষ্টির প্রতি ফোঁটায়
+                                    ১০টি করে নেকি দান করবেন। বৃষ্টির পানিতে গাছপালায় ও তৃণলতায় যত পাতা গজাবে প্রতি পাতার
+                                    বিনিময়ে তাকে আরও ১০টি করে নেকি দেওয়া হবে।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <h4 class="section-title">সালাতুল নাউম</h4>
+                                <p class="card-text">রাসুলুল্লাহ (সা.) বলেছেন, যে ব্যক্তি শোয়ার আগে দুই রাকাত নামাজ পড়ে,
+                                    তা তার জন্য এক হাজার দিনার (স্বর্ণমুদ্রা) ও এক হাজার জামাকাপড় (পোশাক) দান করার চেয়ে
+                                    উত্তম।</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="section-title">সালাতুল সাকরাতুল মউত</h4>
+                                <p class="card-text">হাদিস শরিফে আছে, যে ব্যক্তি মাগরিব ও এশার মাঝখানে দুই রাকাত নামাজ
+                                    পড়বে; তার মৃত্যুযন্ত্রণা কম হবে। (সূত্র: ইহইয়াউ উলুমিদ্দিন, খাজিনাতুল আসরার, নফল
+                                    সালাতের ফজিলত)।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{--  <section class="" id="roja">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12 mx-auto">
+
+                      <h5 class="section-title">যে সকল দিনে রোযা রাখা নিষিদ্ধ</h5>
+                  </div>
+                  <div class="col-md-4 nishiddo">
+                      <div class="elementor-widget-container">
+                          <div class="single-intro-text mb-5">
+                              <i class="icon dripicons-time-reverse"></i>
+                              <h3 class="ts-title">ঈদুল ফিতর (রামাযানের ঈদ) এর দিন।</h3>
+                              <span class="count-number"></span>
+                          </div><!-- single intro text end-->
+
+                      </div>
+                  </div>
+                  <div class="col-md-4 nishiddo">
+                      <div class="elementor-widget-container">
+                          <div class="single-intro-text mb-5">
+                              <i class="icon dripicons-time-reverse"></i>
+                              <h3 class="ts-title">ঈদুল আযহা (কুরবানী) এর দিন। </h3>
+                              <span class="count-number"></span>
+                          </div><!-- single intro text end-->
+
+                      </div>
+                  </div>
+                  <div class="col-md-4 nishiddo">
+                      <div class="elementor-widget-container">
+                          <div class="single-intro-text mb-5">
+                              <i class="icon dripicons-time-reverse"></i>
+                              <h3 class="ts-title"> ঈদুল আযহার এর পরে আরো তিন দিন।</h3>
+                              <span class="count-number"></span>
+                          </div><!-- single intro text end-->
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>--}}
 
 
 
@@ -342,10 +460,9 @@
 
         }
 
-      //  UserAction();
+        //  UserAction();
 
 
     </script>
-
 
 @endsection
