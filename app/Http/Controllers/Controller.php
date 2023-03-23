@@ -42,7 +42,7 @@ class Controller extends BaseController
         }*/
         //  return District::all();
 
-        $news = Applicants::where('is_active', true)->orderby("created_at", "DESC")->paginate(10);
+       // $news = Applicants::where('is_active', true)->orderby("created_at", "DESC")->paginate(10);
         /*$winners = Applicants::where('is_short_listed', true)->orderBy('created_at', 'DESC')->get();*/
 
         /* foreach ($winners as $item) {
@@ -94,7 +94,6 @@ class Controller extends BaseController
 
         return view('common.home.index')
             // ->with('news', $news)
-            ->with('news', $news)
             ->with("thumbnail", "/images/facebook.png")
             ->with("fb_title", "তীর রমজানুল মোবারক ")
             ->with("fb_sub_title", "তীর এর পক্ষ থেকে সবাইকে রমজানুল মোবারক এর শুভেচ্ছা")

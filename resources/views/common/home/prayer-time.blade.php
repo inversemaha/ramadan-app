@@ -60,12 +60,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h5 class="section-title">আপনার জেলা নির্বাচন করে সেহেরি ও ইফতারের সময় দেখুন</h5>
+            <h5 class="section-title">আপনার জেলা নির্বাচন করে নামাজের  সময় দেখুন</h5>
         </div>
         <div class="col-md-6">
 
             <select class="form-control" name="location" ng-model="location" ng-change="changeLocation(value)">
-                <option value="">আপনার জেলা নির্বাচন করুন</option>
+                <option value="">ঢাকা</option>
                 <option value="8">ঠাকুরগাঁও, নবাবগঞ্জ</option>
                 <option value="7">দিনাজপুর , পঞ্চগড়</option>
                 <option value="6">রাজশাহী,মেহেরপুর,জয়পুরহাট,সাতক্ষীরা</option>
@@ -108,7 +108,7 @@
                             <table class="table table-bordered table-hover" ng-init="changeLocation(0)">
                                 <thead>
                                 <tr>
-                                    <th><img class="azan" src="/icons/salat-name.png"/>সালাত</th>
+                                    <th><img class="azan" src="/icons/salat-name.png"/>নামাজ </th>
                                     <th><img class="salat" src="/icons/salat-time.png"/>সময়</th>
                                 </tr>
                                 </thead>

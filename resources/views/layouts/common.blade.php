@@ -85,7 +85,7 @@
                 <div class="col-lg-2 col-6">
                     <!-- logo-->
                     <a class="navbar-brand logo" href="/">
-                        <img class="logo" src="/images/logo.png" alt="">
+                        <img class="logo" src="/images/logo.png" style="    height: 60px;" alt="">
                     </a>
                 </div><!-- end col -->
 
@@ -103,7 +103,7 @@
                                     <a style="color:#EF3F23 " href="/">হোম </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#ad">ইফতারের সময়সূচি </a>
+                                    <a href="#prayerTime">নামাজের  সময়সূচি  </a>
                                 </li>
 
 
