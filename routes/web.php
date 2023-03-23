@@ -28,6 +28,7 @@ Route::get('/login', [AuthController::class, 'login']);
 Route::any('/test', [AuthController::class, 'test']);
 
 Route::get('/', [Controller::class, 'home']);
+Route::get('/prayer-time', [Controller::class, 'home']);
 Route::any('/applicant/submit', [Controller::class, 'applicantSubmit']);
 
 
