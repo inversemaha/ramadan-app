@@ -179,15 +179,12 @@
 
 
 
-
-
-
     <script type="text/javascript">
         document.getElementById('zila').style.display = 'none';
         document.getElementById('zila_seheri').style.display = 'none';
 
 
-        function addMinute(minute) {
+        function addMinxute(minute) {
             document.getElementById('zila').style.display = 'block';
             document.getElementById('zila_seheri').style.display = 'block';
 
@@ -345,7 +342,7 @@
 
         }
 
-        UserAction();
+      //  UserAction();
 
 
     </script>

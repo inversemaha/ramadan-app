@@ -76,7 +76,7 @@
 
 </head>
 
-<body>
+<body ng-app="myApp">
 <div class="body-inner">
 
     <header id="header" class="header header  {{--header-transparent--}} h-transparent2 fixed">

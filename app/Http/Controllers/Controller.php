@@ -75,22 +75,21 @@ class Controller extends BaseController
         }
 
 
-        $time = '2023-03-24T04:39';
+        /*$time = '2023-03-24T04:39';
         $carbon = new Carbon($time);
         $newTime = $carbon->addMinutes(5)->format('Y-m-d\TH:i');
-        return $newTime; // Output: 2023-03-24T04:44
+        return $newTime;*/ // Output: 2023-03-24T04:44
 
 
-
-        return response()->json([
-            'sehri' =>  $this->convertNumberToBangla(date('H:i', strtotime($sehri))),
-            'fajr' =>  $this->convertNumberToBangla(date('H:i', strtotime($fajr))),
-            'dhuhr' =>  $this->convertNumberToBangla(date('H:i', strtotime($dhuhr))),
-            'asr' =>  $this->convertNumberToBangla(date('H:i', strtotime($asr))),
-            'maghrib' =>  $this->convertNumberToBangla(date('H:i', strtotime($maghrib))),
-            'isha' =>  $this->convertNumberToBangla(date('H:i', strtotime($isha))),
-            'sunrise' =>  $this->convertNumberToBangla(date('H:i', strtotime($sunrise))),
-        ]);
+        $data_array = [
+            'sehri' => $this->convertNumberToBangla(date('H:i', strtotime($sehri))),
+            'fajr' => $this->convertNumberToBangla(date('H:i', strtotime($fajr))),
+            'dhuhr' => $this->convertNumberToBangla(date('H:i', strtotime($dhuhr))),
+            'asr' => $this->convertNumberToBangla(date('H:i', strtotime($asr))),
+            'maghrib' => $this->convertNumberToBangla(date('H:i', strtotime($maghrib))),
+            'isha' => $this->convertNumberToBangla(date('H:i', strtotime($isha))),
+            'sunrise' => $this->convertNumberToBangla(date('H:i', strtotime($sunrise))),
+        ];
 
 
         return view('common.home.index')
@@ -98,7 +97,8 @@ class Controller extends BaseController
             ->with('news', $news)
             ->with("thumbnail", "/images/facebook.png")
             ->with("fb_title", "তীর রমজানুল মোবারক ")
-            ->with("fb_sub_title", "তীর এর পক্ষ থেকে সবাইকে রমজানুল মোবারক এর শুভেচ্ছা");
+            ->with("fb_sub_title", "তীর এর পক্ষ থেকে সবাইকে রমজানুল মোবারক এর শুভেচ্ছা")
+            ->with("data_array", $data_array);
 
 
         // $videos = Video::get();
@@ -108,6 +108,68 @@ class Controller extends BaseController
             ->with('videos', $videos)
             ->with('news', $news)
             ->with('photos', $photos);
+    }
+
+    function prayerTime($time)
+    {
+
+        // return view('test');
+
+        //Read json file from public folder
+        $json = file_get_contents(public_path('json/prayer-time.json'));
+        //Decode json data
+        $data = json_decode($json, true);
+
+        $currentDate = date('Y-m-d');
+
+        foreach ($data as $item) {
+            if ($item['date'] == $currentDate) {
+                // Found the data for current date
+                $sehri = $item['sehri'];
+                $fajr = $item['fajr'];
+                $dhuhr = $item['dhuhr'];
+                $asr = $item['asr'];
+                $maghrib = $item['maghrib'];
+                $isha = $item['isha'];
+                $sunrise = $item['sunrise'];
+                break;
+            }
+        }
+
+
+
+        $carbon = new Carbon($sehri);
+        $sehri = $carbon->addMinutes($time)->format('Y-m-d\TH:i');
+
+        $carbon = new Carbon($fajr);
+        $fajr = $carbon->addMinutes($time)->format('Y-m-d\TH:i');
+
+        $carbon = new Carbon($dhuhr);
+        $dhuhr = $carbon->addMinutes($time)->format('Y-m-d\TH:i');
+
+        $carbon = new Carbon($asr);
+        $asr = $carbon->addMinutes($time)->format('Y-m-d\TH:i');
+
+        $carbon = new Carbon($maghrib);
+        $maghrib = $carbon->addMinutes($time)->format('Y-m-d\TH:i');
+
+        $carbon = new Carbon($isha);
+        $isha = $carbon->addMinutes($time)->format('Y-m-d\TH:i');
+
+        $carbon = new Carbon($sunrise);
+        $sunrise = $carbon->addMinutes($time)->format('Y-m-d\TH:i');
+
+        $data_array = [
+            'sehri' => $this->convertNumberToBangla(date('H:i', strtotime($sehri))),
+            'fajr' => $this->convertNumberToBangla(date('H:i', strtotime($fajr))),
+            'dhuhr' => $this->convertNumberToBangla(date('H:i', strtotime($dhuhr))),
+            'asr' => $this->convertNumberToBangla(date('H:i', strtotime($asr))),
+            'maghrib' => $this->convertNumberToBangla(date('H:i', strtotime($maghrib))),
+            'isha' => $this->convertNumberToBangla(date('H:i', strtotime($isha))),
+            'sunrise' => $this->convertNumberToBangla(date('H:i', strtotime($sunrise))),
+        ];
+
+        return $data_array;
     }
 
     function convertNumberToBangla($number)
@@ -128,10 +190,10 @@ class Controller extends BaseController
         $banglaNumber = "";
         $numberLength = strlen($number);
 
-        for($i = 0; $i < $numberLength; $i++) {
+        for ($i = 0; $i < $numberLength; $i++) {
             $char = substr($number, $i, 1);
 
-            if($char == ':') {
+            if ($char == ':') {
                 $banglaNumber .= ':';
             } else {
                 $digit = intval($char);
