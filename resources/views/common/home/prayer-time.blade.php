@@ -1,3 +1,11 @@
+<style>
+    .fajr {
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+    }
+</style>
+
 <section class="" id="ad">
     <div class="container">
         <div class="row">
@@ -48,8 +56,28 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>Fajr</td>
-                                        <td>03.30AM</td>
+                                        <td><img class="fajr" src="/icons/1.png"></img>Fajr</td>
+                                        <td>03.30 am</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dhuhr</td>
+                                        <td>01.30 pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Asar</td>
+                                        <td>05.10 pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src=""></img>Magrib</td>
+                                        <td>06.50 pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Isha</td>
+                                        <td>08.30 pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jumah</td>
+                                        <td>12.30 pm</td>
                                     </tr>
                                     </tbody>
                                 </table>
