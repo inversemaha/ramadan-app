@@ -1,7 +1,50 @@
 <style>
     .fajr {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
+        margin: 0px 11px 0px -8px;
+        background-size: cover;
+    }
+    .dhuhr {
+        width: 25px;
+        height: 25px;
+        margin: 0px 11px 0px -10px;
+        background-size: cover;
+    }
+    .asar {
+        width: 21px;
+        height: 21px;
+        margin: 0px 11px 0px -6px;
+        background-size: cover;
+    }
+    .magrib {
+        width: 25px;
+        height: 25px;
+        margin: 0px 11px 0px -9px;
+        background-size: cover;
+    }
+    .isha {
+        width: 23px;
+        height: 23px;
+        margin: 0px 11px 0px -9px;
+        background-size: cover;
+    }
+    .jummah {
+        width: 25px;
+        height: 25px;
+        margin: 0px 11px 0px 0px;
+        background-size: cover;
+    }
+    .salat {
+        width: 60px;
+        height: 80px;
+        margin: 0px 11px 0px 0px;
+        background-size: cover;
+    }
+    .azan {
+        width: 60px;
+        height: 80px;
+        margin: 0px 11px 0px 0px;
         background-size: cover;
     }
 </style>
@@ -50,8 +93,8 @@
                             <table class="table table-bordered table-hover" ng-init="changeLocation(0)">
                                 <thead>
                                 <tr>
-                                    <th>সালাত</th>
-                                    <th>সময়</th>
+                                    <th><img class="azan" src="/icons/salat-name.png"/>সালাত</th>
+                                    <th><img class="salat" src="/icons/salat-time.png"/>সময়</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -61,29 +104,24 @@
                                     <td><span ng-bind="fajr"></span></td>
                                 </tr>
                                 <tr>
-                                    <td><img class="fajr" src="/icons/1.png"/>ফজর</td>
+                                    <td><img class="dhuhr" src="/icons/22.png"/>জোহর</td>
                                    {{-- <td>{{$data_array['fajr']}}</td>--}}
-                                    <td><span ng-bind="fajr"></span></td>
+                                    <td><span ng-bind="dhuhr"></span></td>
                                 </tr>
                                 <tr>
-                                    <td><img class="fajr" src="/icons/1.png"/>ফজর</td>
+                                    <td><img class="asar" src="/icons/33.png"/>আসর</td>
                                     {{--<td>{{$data_array['fajr']}}</td>--}}
-                                    <td><span ng-bind="fajr"></span></td>
+                                    <td><span ng-bind="asr"></span></td>
                                 </tr>
                                 <tr>
-                                    <td><img class="fajr" src="/icons/1.png"/>ফজর</td>
+                                    <td><img class="magrib" src="/icons/55.png"/>মাগরিব</td>
                                     {{--<td>{{$data_array['fajr']}}</td>--}}
-                                    <td><span ng-bind="fajr"></span></td>
+                                    <td><span ng-bind="maghrib"></span></td>
                                 </tr>
                                 <tr>
-                                    <td><img class="fajr" src="/icons/1.png"/>ফজর</td>
+                                    <td><img img class="isha" src="/icons/77.png"/>এশা</td>
                                    {{-- <td>{{$data_array['fajr']}}</td>--}}
-                                    <td><span ng-bind="fajr"></span></td>
-                                </tr>
-                                <tr>
-                                    <td><img class="fajr" src="/icons/1.png"/>ফজর</td>
-                                    {{--<td>{{$data_array['fajr']}}</td>--}}
-                                    <td><span ng-bind="fajr"></span></td>
+                                    <td><span ng-bind="isha"></span></td>
                                 </tr>
                                 {{-- <tr>
                                      <td><img class="fajr" src="/icons/1.png"/>জোহর </td>
