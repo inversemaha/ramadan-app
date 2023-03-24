@@ -106,7 +106,6 @@
                                     <a href="#prayerTime">নামাজের  সময়সূচি  </a>
                                 </li>
 
-
                             </ul>
                         </div>
                     </nav>
